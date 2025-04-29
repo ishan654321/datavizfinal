@@ -18,6 +18,7 @@ def overview():
         components.html(html, height=800, scrolling=True)
     st.header('Values in Cluster')
     st.image('Screenshot 2025-04-28 213043.png')
+    st.header('Problems in Overview:')
     st.markdown('''- It was a huge amount of data and to deal with it was big challenge.
 - Colab, Kaggle, Jupyter notebook was not helpful when we tried to load 8.6 millions of rows with 1.1 GB size of csv file into data frame. 
 The visualizations were taking even longer time to generate.
