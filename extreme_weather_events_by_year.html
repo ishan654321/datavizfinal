@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-bbf3f52e82723db2ba1b36e0e3f02f86"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "Type", "type": "nominal"}, "tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "Type", "type": "nominal"}, {"field": "EventCount", "type": "quantitative"}], "x": {"field": "Year", "title": "Year", "type": "ordinal"}, "y": {"field": "EventCount", "title": "Number of Events", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_3", "select": {"type": "point", "fields": ["Type"]}, "bind": {"input": "select", "options": ["Cold", "Fog", "Hail", "Precipitation", "Rain", "Snow", "Storm"], "name": "Select Event Type:"}}], "title": "Extreme Weather Events by Year", "transform": [{"filter": {"param": "param_3"}}], "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-bbf3f52e82723db2ba1b36e0e3f02f86": [{"Year": 2016.0, "Type": "Cold", "EventCount": 1517}, {"Year": 2016.0, "Type": "Fog", "EventCount": 10877}, {"Year": 2016.0, "Type": "Hail", "EventCount": 25}, {"Year": 2016.0, "Type": "Precipitation", "EventCount": 534}, {"Year": 2016.0, "Type": "Rain", "EventCount": 33426}, {"Year": 2016.0, "Type": "Snow", "EventCount": 8760}, {"Year": 2016.0, "Type": "Storm", "EventCount": 529}, {"Year": 2017.0, "Type": "Cold", "EventCount": 1670}, {"Year": 2017.0, "Type": "Fog", "EventCount": 11282}, {"Year": 2017.0, "Type": "Hail", "EventCount": 43}, {"Year": 2017.0, "Type": "Precipitation", "EventCount": 479}, {"Year": 2017.0, "Type": "Rain", "EventCount": 35659}, {"Year": 2017.0, "Type": "Snow", "EventCount": 8734}, {"Year": 2017.0, "Type": "Storm", "EventCount": 697}, {"Year": 2018.0, "Type": "Cold", "EventCount": 2651}, {"Year": 2018.0, "Type": "Fog", "EventCount": 12288}, {"Year": 2018.0, "Type": "Hail", "EventCount": 42}, {"Year": 2018.0, "Type": "Precipitation", "EventCount": 432}, {"Year": 2018.0, "Type": "Rain", "EventCount": 38236}, {"Year": 2018.0, "Type": "Snow", "EventCount": 10510}, {"Year": 2018.0, "Type": "Storm", "EventCount": 564}, {"Year": 2019.0, "Type": "Cold", "EventCount": 1603}, {"Year": 2019.0, "Type": "Fog", "EventCount": 16520}, {"Year": 2019.0, "Type": "Hail", "EventCount": 52}, {"Year": 2019.0, "Type": "Precipitation", "EventCount": 1495}, {"Year": 2019.0, "Type": "Rain", "EventCount": 34058}, {"Year": 2019.0, "Type": "Snow", "EventCount": 11051}, {"Year": 2019.0, "Type": "Storm", "EventCount": 382}, {"Year": 2020.0, "Type": "Cold", "EventCount": 1387}, {"Year": 2020.0, "Type": "Fog", "EventCount": 13759}, {"Year": 2020.0, "Type": "Hail", "EventCount": 6}, {"Year": 2020.0, "Type": "Precipitation", "EventCount": 1375}, {"Year": 2020.0, "Type": "Rain", "EventCount": 29103}, {"Year": 2020.0, "Type": "Snow", "EventCount": 6290}, {"Year": 2020.0, "Type": "Storm", "EventCount": 418}, {"Year": 2021.0, "Type": "Cold", "EventCount": 1129}, {"Year": 2021.0, "Type": "Fog", "EventCount": 16926}, {"Year": 2021.0, "Type": "Hail", "EventCount": 8}, {"Year": 2021.0, "Type": "Precipitation", "EventCount": 1413}, {"Year": 2021.0, "Type": "Rain", "EventCount": 28985}, {"Year": 2021.0, "Type": "Snow", "EventCount": 6582}, {"Year": 2021.0, "Type": "Storm", "EventCount": 357}, {"Year": 2022.0, "Type": "Cold", "EventCount": 1240}, {"Year": 2022.0, "Type": "Fog", "EventCount": 15399}, {"Year": 2022.0, "Type": "Hail", "EventCount": 2}, {"Year": 2022.0, "Type": "Precipitation", "EventCount": 1332}, {"Year": 2022.0, "Type": "Rain", "EventCount": 29434}, {"Year": 2022.0, "Type": "Snow", "EventCount": 8834}, {"Year": 2022.0, "Type": "Storm", "EventCount": 773}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
